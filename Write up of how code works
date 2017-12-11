@@ -1,0 +1,20 @@
+TO DO LIST FOR CAR RENTAL SEARCH PROJECT: 
+
+INPUTS:
+  - input pickup date
+  - input dropoff date
+  - input car type
+  - input latitude 
+  - input longitude 
+  - ask user whether they would like more information or not on there type of vechile
+  
+  OUTPUTS:
+  - Return a list of car rental providers that meet the users criteria 
+  
+  ALGORITHM:
+  - import everything to be used (json, pprint, requests)
+  - have user enter in all of the criteria to be searched for
+  - once entered, it will return a list of all nearby areas that have the criteria the user searched for
+  - at this time, it will ask the user if he would like more information...
+  - if yes, print out more information on the vehicle
+  - if no, the program will end
