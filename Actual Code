@@ -1,0 +1,38 @@
+import json
+import requests
+import pprint
+from urllib.request import urlopen
+
+
+print('Hello! Welcome to our program. \n Today we will help you find out about your product!')
+print('Date format: YYYY-MM-DD')
+
+pickup = input('Please enter the pickup date: ')
+dropoff = input('Please enter the dropoff date: ')
+print('Available car types: STANDARD, TWO_DOOR, TWO_OR_FOUR_DOOR, FOUR_OR_FIVE_DOOR, ELITE, COUPE_OR_ROADSTER, PICKUP, ESTATE_OR_WAGON, RECREATIONAL_VEHICLE, SUV, PASSENGER_VAN, SIX_PERSON_VAN, SEVEN_PERSON_VAN, EIGHT_PERSON_VAN, NINE_PERSON_VAN, AWD, ALL_TERRAIN, COMMERCIAL_TRUCK, LIMOUSINE, SPORT, CONVERTIBLE, SPECIAL_OFFER_CAR, MONOSPACE, MOTOR_HOME, MOTORCYCLE')
+cartype = input('Please enter the cartype:')
+lat = input('Please enter your latitude ex:(42.7) : ')
+lon = input('Please enter your longitude ex:(-72.1) : ')
+
+pickup = '2017-12-15'
+dropoff = '2017-12-20'
+cartype = 'STANDARD'
+url = ('https://api.sandbox.amadeus.com/v1.2/cars/search-circle?apikey=v7olqJVDlRvGydQe4SGFG1RGpMGwWfxH&latitude={3}&longitude={4}&radius=42&pick_up={0}&drop_off={1}&vehicle={2}').format(pickup, dropoff, cartype, lat, lon)
+
+
+print('Generating list of results...........')
+def results():
+    response = requests.get(url)
+    return response.json()
+
+result = results()
+
+pp = pprint.PrettyPrinter(indent=5, depth=4, compact=True)
+pp.pprint(result)
+
+y_n = input("Would you like more information including pricing? Y/N")
+if(y_n == 'Y'):
+    pp = pprint.PrettyPrinter(indent=5, depth=10, compact=True)
+    pp.pprint(result)
+else:
+    print('Thank you! Goodbye!')
