@@ -1,0 +1,2 @@
+url = ('https://api.sandbox.amadeus.com/v1.2/cars/search-circle?apikey=v7olqJVDlRvGydQe4SGFG1RGpMGwWfxH&latitude={3}&longitude={4}&radius=42&pick_up={0}&drop_off={1}&vehicle={2}').format(pickup, dropoff, cartype, lat, lon)
+apikey=v7olqJVDlRvGydQe4SGFG1RGpMGwWfxH
