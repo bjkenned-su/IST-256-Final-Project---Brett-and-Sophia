@@ -1,0 +1,4 @@
+In our original proposal, we said our plan was to use the Edmund's API to search for car vehcicles, but we had to stop this
+idea because the edmund API is not accessible unless you are partnered through a buisness with them. So our next plan was 
+to find another API with a very similar purpose. Instead of orginally finding new or used cars, this new API is going to help
+users search for car rentals nearby.
